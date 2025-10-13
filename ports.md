@@ -1085,36 +1085,7 @@ xsltproc scan_completo.xml -o scan_report.html
 grep -E "open|filtered" scan_grepable.txt
 # Output: Host: 192.168.1.50 () Ports: 22/open/tcp//ssh///
 
-# ============================================
-# SECCIÓN 20: RESUMEN DE PUERTOS CRÍTICOS
-# ============================================
-
-# 89. Tabla de puertos críticos para pentesting
-cat << 'EOF'
-╔════════════════════════════════════════════════════════════════╗
-║ PUERTOS MÁS ATACADOS Y CRÍTICOS PARA SEGURIDAD               ║
-╠═══════╤══════════════════╤═════════════╤═════════════════════╣
-║ Puerto│ Servicio          │ Protocolo   │ Nivel de Riesgo     ║
-╠═══════╪══════════════════╪═════════════╪═════════════════════╣
-║ 21    │ FTP              │ TCP         │ ⚠️  ALTO            ║
-║ 22    │ SSH              │ TCP         │ 🔴 CRÍTICO          ║
-║ 23    │ Telnet           │ TCP         │ 🔴 CRÍTICO          ║
-║ 25    │ SMTP             │ TCP         │ ⚠️  ALTO            ║
-║ 53    │ DNS              │ TCP/UDP     │ ⚠️  ALTO            ║
-║ 80    │ HTTP             │ TCP         │ 🔴 CRÍTICO          ║
-║ 110   │ POP3             │ TCP         │ ⚠️  MEDIO           ║
-║ 143   │ IMAP             │ TCP         │ ⚠️  MEDIO           ║
-║ 443   │ HTTPS            │ TCP         │ 🔴 CRÍTICO          ║
-║ 445   │ SMB              │ TCP         │ 🔴 CRÍTICO          ║
-║ 3306  │ MySQL            │ TCP         │ 🔴 CRÍTICO          ║
-║ 3389  │ RDP              │ TCP         │ 🔴 CRÍTICO          ║
-║ 5432  │ PostgreSQL       │ TCP         │ ⚠️  ALTO            ║
-║ 8080  │ HTTP-Proxy       │ TCP         │ ⚠️  MEDIO           ║
-╚═══════╧══════════════════╧═════════════╧═════════════════════╝
-EOF
-
 # 90. Ver estadísticas de uso de puertos
-cat << 'EOF'
 TOP 10 PUERTOS MÁS UTILIZADOS EN INTERNET:
 
 1. Puerto 80  (HTTP)   - 35% del tráfico
