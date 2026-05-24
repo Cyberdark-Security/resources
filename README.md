@@ -34,3 +34,7 @@ A continuación se presenta el flujo estándar seguido en procesos de auditoría
 | **FTP Manual** | Operaciones avanzadas de transferencia de archivos. | [Ver Guía ➔](docs/ftp-cheatsheet.md) |
 
 ---
+
+---
+
+**Hecho por Cyberdark by Whoami-labs.com**
