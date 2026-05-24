@@ -1,23 +1,36 @@
-# Base de Conocimientos de Recursos Técnicos
+# 🛠️ Hub de Recursos Técnicos y Ciberseguridad
 
-Este repositorio sirve como una referencia técnica exhaustiva para la administración de sistemas, redes y auditoría de seguridad (pentesting). Está diseñado para proporcionar un acceso rápido a comandos esenciales, configuraciones y mejores prácticas tanto para profesionales como para estudiantes.
+![Linux](https://img.shields.io/badge/Linux-SCC?style=for-the-badge&logo=linux&logoColor=white)
+![Networking](https://img.shields.io/badge/Networking-blue?style=for-the-badge&logo=cisco&logoColor=white)
+![Security](https://img.shields.io/badge/Security-Shield?style=for-the-badge&logo=hackthebox&logoColor=white)
 
-## Alcance del Conocimiento
-
-- **Administración de Linux**: Guía completa de navegación del sistema, gestión de archivos, permisos (ACL, SUID/SGID) y monitoreo de procesos.
-- **Servicios del Sistema**: Gestión de servicios utilizando `systemd` y prácticas estándar de inicialización.
-- **Protocolos de Red**: Referencia detallada de puertos TCP/UDP comunes, sus funciones e implicaciones de seguridad.
-- **Transferencia de Archivos**: Guías especializadas para operaciones FTP y alternativas seguras.
-- **Seguridad y Pentesting**: Metodología para pruebas de penetración, herramientas de reconocimiento y endurecimiento del sistema (firewalls, seguridad SSH).
-
-## Navegación
-
-Explore la documentación a través de las siguientes guías:
-
-- [Guía de Administración de Linux](docs/linux-cheatsheet.md): Referencia extensa de comandos para tareas diarias en Linux.
-- [Referencia de Puertos de Red](docs/ports.md): Catálogo de puertos comunes y técnicas de auditoría.
-- [Guía de FTP](docs/ftp-cheatsheet.md): Guía detallada para operaciones de cliente FTP y seguridad.
-- [Metodología de Pentesting](assets/diagrama-pentest.png): Diagrama visual del ciclo de vida de una prueba de penetración.
+Una base de conocimientos centralizada diseñada para administradores de sistemas, ingenieros de red y entusiastas de la ciberseguridad. Este repositorio compila guías prácticas, comandos esenciales y metodologías para la gestión y auditoría de infraestructuras tecnológicas.
 
 ---
-*Nota: Esta guía tiene como objetivo ser una referencia práctica y se actualiza continuamente con prácticas de seguridad modernas.*
+
+### 📂 Contenido Principal
+
+*   **🐧 Administración de Sistemas**: Guías exhaustivas para el dominio del entorno Linux, desde la gestión de archivos hasta la automatización de tareas.
+*   **🌐 Redes y Protocolos**: Catálogo detallado de servicios, puertos y técnicas de análisis de tráfico.
+*   **🛡️ Auditoría de Seguridad**: Metodologías paso a paso para la identificación de vulnerabilidades y endurecimiento de sistemas.
+*   **⚡ Transferencia Eficiente**: Recursos para la gestión de datos remotos y protocolos de comunicación.
+
+---
+
+### 🗺️ Metodología de Trabajo
+
+A continuación se presenta el flujo estándar seguido en procesos de auditoría y pentesting:
+
+![Ciclo de Pentesting](assets/diagrama-pentest.png)
+
+---
+
+### 🚀 Guías de Referencia Rápida
+
+| Recurso | Descripción | Enlace |
+| :--- | :--- | :--- |
+| **Linux Cheat Sheet** | Comandos de navegación, permisos, procesos y servicios. | [Ver Guía ➔](docs/linux-cheatsheet.md) |
+| **Network Ports** | Análisis de puertos TCP/UDP y servicios asociados. | [Ver Guía ➔](docs/ports.md) |
+| **FTP Manual** | Operaciones avanzadas de transferencia de archivos. | [Ver Guía ➔](docs/ftp-cheatsheet.md) |
+
+---
