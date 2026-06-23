@@ -1,29 +1,58 @@
 # Network Ports Reference
 
+| [Inicio](index.md) | [Linux](linux-cheatsheet.md) · [Puertos](ports.md) · [FTP](ftp-cheatsheet.md) |
+| :--- | :--- |
+
+> [!NOTE]
+> **19 secciones** · Catálogo de puertos, escaneo, firewall y herramientas de auditoría.
+
+## Referencia rápida — puertos críticos
+
+| Puerto | Servicio | Protocolo | Seguridad |
+| :---: | :--- | :---: | :--- |
+| 21 | FTP | TCP | ⚠️ Texto claro — usar SFTP |
+| 22 | SSH | TCP | ✅ Cifrado |
+| 23 | Telnet | TCP | ⚠️ Obsoleto — usar SSH |
+| 25 | SMTP | TCP | Email saliente |
+| 53 | DNS | TCP/UDP | Resolución de nombres |
+| 80 | HTTP | TCP | ⚠️ Sin cifrado |
+| 443 | HTTPS | TCP | ✅ Web cifrada |
+| 445 | SMB | TCP | Compartición Windows |
+| 3306 | MySQL | TCP | Base de datos |
+| 3389 | RDP | TCP | Escritorio remoto |
+| 8080 | HTTP-Alt | TCP | Servicios web alternativos |
+
+| Herramienta | Uso |
+| :--- | :--- |
+| `nmap -sV -p- objetivo` | Escaneo completo con versiones |
+| `nmap -sC -sV objetivo` | Scripts por defecto + versiones |
+| `ss -tulpn` | Puertos locales en escucha |
+| `netstat -tulpn` | Alternativa a `ss` |
+
 ## Table of Contents
-1. [PUERTOS TCP FUNDAMENTALES](#sección-1-puertos-tcp-fundamentales)
-2. [PUERTOS DE BASES DE DATOS](#sección-2-puertos-de-bases-de-datos)
-3. [PUERTOS DE VPN Y TÚNELES](#sección-3-puertos-de-vpn-y-túneles)
-4. [PUERTOS DE ESCRITORIO REMOTO](#sección-4-puertos-de-escritorio-remoto)
-5. [PUERTOS UDP IMPORTANTES](#sección-5-puertos-udp-importantes)
-6. [PUERTOS DE SERVICIOS WEB](#sección-6-puertos-de-servicios-web)
-7. [PUERTOS DE JUEGOS Y P2P](#sección-7-puertos-de-juegos-y-p2p)
-8. [ESCANEO MASIVO DE PUERTOS](#sección-8-escaneo-masivo-de-puertos)
-9. [DETECCIÓN DE SERVICIOS](#sección-9-detección-de-servicios)
-10. [ANÁLISIS DE TRÁFICO](#sección-10-análisis-de-tráfico)
-11. [NETSTAT Y SS (PUERTOS LOCALES)](#sección-11-netstat-y-ss-puertos-locales)
-12. [LSOF (LIST OPEN FILES)](#sección-12-lsof-list-open-files)
-13. [FIREWALL Y GESTIÓN DE PUERTOS](#sección-13-firewall-y-gestión-de-puertos)
-14. [PORT FORWARDING (REENVÍO)](#sección-14-port-forwarding-reenvío)
-15. [HERRAMIENTAS DE PENTESTING](#sección-15-herramientas-de-pentesting)
-16. [METASPLOIT PARA PUERTOS](#sección-16-metasploit-para-puertos)
-17. [AUTOMATIZACIÓN CON SCRIPTS](#sección-17-automatización-con-scripts)
-18. [MONITOREO CONTINUO](#sección-18-monitoreo-continuo)
-19. [EXPORTAR Y DOCUMENTAR](#sección-19-exportar-y-documentar)
+1. [PUERTOS TCP FUNDAMENTALES](#seccion-1)
+2. [PUERTOS DE BASES DE DATOS](#seccion-2)
+3. [PUERTOS DE VPN Y TÚNELES](#seccion-3)
+4. [PUERTOS DE ESCRITORIO REMOTO](#seccion-4)
+5. [PUERTOS UDP IMPORTANTES](#seccion-5)
+6. [PUERTOS DE SERVICIOS WEB](#seccion-6)
+7. [PUERTOS DE JUEGOS Y P2P](#seccion-7)
+8. [ESCANEO MASIVO DE PUERTOS](#seccion-8)
+9. [DETECCIÓN DE SERVICIOS](#seccion-9)
+10. [ANÁLISIS DE TRÁFICO](#seccion-10)
+11. [NETSTAT Y SS (PUERTOS LOCALES)](#seccion-11)
+12. [LSOF (LIST OPEN FILES)](#seccion-12)
+13. [FIREWALL Y GESTIÓN DE PUERTOS](#seccion-13)
+14. [PORT FORWARDING (REENVÍO)](#seccion-14)
+15. [HERRAMIENTAS DE PENTESTING](#seccion-15)
+16. [METASPLOIT PARA PUERTOS](#seccion-16)
+17. [AUTOMATIZACIÓN CON SCRIPTS](#seccion-17)
+18. [MONITOREO CONTINUO](#seccion-18)
+19. [EXPORTAR Y DOCUMENTAR](#seccion-19)
 
 ---
 
-## SECCIÓN 1: PUERTOS TCP FUNDAMENTALES
+## SECCIÓN 1: PUERTOS TCP FUNDAMENTALES {#seccion-1}
 
 ### 1. PUERTO 21 - FTP (File Transfer Protocol)
 
@@ -350,7 +379,7 @@ Output: [+] Got OS info for 192.168.1.10 from smbclient:
 ```
 
 
-## SECCIÓN 2: PUERTOS DE BASES DE DATOS
+## SECCIÓN 2: PUERTOS DE BASES DE DATOS {#seccion-2}
 
 ### 11. PUERTO 3306 - MySQL/MariaDB
 
@@ -487,7 +516,7 @@ Output: | redis-info:
 ```
 
 
-## SECCIÓN 3: PUERTOS DE VPN Y TÚNELES
+## SECCIÓN 3: PUERTOS DE VPN Y TÚNELES {#seccion-3}
 
 ### 16. PUERTO 1194 - OpenVPN
 
@@ -553,7 +582,7 @@ Output: 51820/udp open|filtered unknown
 ```
 
 
-## SECCIÓN 4: PUERTOS DE ESCRITORIO REMOTO
+## SECCIÓN 4: PUERTOS DE ESCRITORIO REMOTO {#seccion-4}
 
 ### 20. PUERTO 3389 - RDP (Remote Desktop Protocol)
 
@@ -616,7 +645,7 @@ Output: | vnc-brute:
 ```
 
 
-## SECCIÓN 5: PUERTOS UDP IMPORTANTES
+## SECCIÓN 5: PUERTOS UDP IMPORTANTES {#seccion-5}
 
 ### 22. PUERTO 67/68 - DHCP (Dynamic Host Configuration Protocol)
 
@@ -720,7 +749,7 @@ Output: | snmp-brute:
 ```
 
 
-## SECCIÓN 6: PUERTOS DE SERVICIOS WEB
+## SECCIÓN 6: PUERTOS DE SERVICIOS WEB {#seccion-6}
 
 ### 26. PUERTO 8080 - HTTP Alternativo
 
@@ -777,7 +806,7 @@ Output: | http-title: Login to Webmin
 ```
 
 
-## SECCIÓN 7: PUERTOS DE JUEGOS Y P2P
+## SECCIÓN 7: PUERTOS DE JUEGOS Y P2P {#seccion-7}
 
 ### 30. PUERTO 3074 - Xbox Live
 
@@ -836,7 +865,7 @@ Output: 4662/tcp open  edonkey
 ```
 
 
-## SECCIÓN 8: ESCANEO MASIVO DE PUERTOS
+## SECCIÓN 8: ESCANEO MASIVO DE PUERTOS {#seccion-8}
 
 ### 34. Escaneo rápido de puertos comunes
 
@@ -902,7 +931,7 @@ Output: (fragmenta paquetes y usa señuelos)
 ```
 
 
-## SECCIÓN 9: DETECCIÓN DE SERVICIOS
+## SECCIÓN 9: DETECCIÓN DE SERVICIOS {#seccion-9}
 
 ### 41. Detección de versiones de servicios
 
@@ -933,7 +962,7 @@ Output: PORT    STATE      SERVICE
 ```
 
 
-## SECCIÓN 10: ANÁLISIS DE TRÁFICO
+## SECCIÓN 10: ANÁLISIS DE TRÁFICO {#seccion-10}
 
 ### 44. Capturar tráfico en puerto específico
 
@@ -981,7 +1010,7 @@ Output: (muestra solo peticiones GET HTTP)
 ```
 
 
-## SECCIÓN 11: NETSTAT Y SS (PUERTOS LOCALES)
+## SECCIÓN 11: NETSTAT Y SS (PUERTOS LOCALES) {#seccion-11}
 
 ### 49. Ver todos los puertos escuchando (TCP)
 
@@ -1041,7 +1070,7 @@ Output: Total: 542 (kernel 0)
 ```
 
 
-## SECCIÓN 12: LSOF (LIST OPEN FILES)
+## SECCIÓN 12: LSOF (LIST OPEN FILES) {#seccion-12}
 
 ### 55. Ver qué proceso usa un puerto específico
 
@@ -1078,7 +1107,7 @@ Output: (puertos abiertos por el usuario kali)
 ```
 
 
-## SECCIÓN 13: FIREWALL Y GESTIÓN DE PUERTOS
+## SECCIÓN 13: FIREWALL Y GESTIÓN DE PUERTOS {#seccion-13}
 
 ### 59. Ver reglas de firewall (UFW)
 
@@ -1162,7 +1191,7 @@ Output: (reglas guardadas)
 ```
 
 
-## SECCIÓN 14: PORT FORWARDING (REENVÍO)
+## SECCIÓN 14: PORT FORWARDING (REENVÍO) {#seccion-14}
 
 ### 68. Reenvío de puerto con SSH (Local Port Forwarding)
 
@@ -1196,7 +1225,7 @@ Output: (tráfico pasa por el túnel SSH)
 ```
 
 
-## SECCIÓN 15: HERRAMIENTAS DE PENTESTING
+## SECCIÓN 15: HERRAMIENTAS DE PENTESTING {#seccion-15}
 
 ### 71. Masscan - Escaneo ultrarrápido
 
@@ -1242,7 +1271,7 @@ Output: (lista de IPs con puerto 80 abierto)
 ```
 
 
-## SECCIÓN 16: METASPLOIT PARA PUERTOS
+## SECCIÓN 16: METASPLOIT PARA PUERTOS {#seccion-16}
 
 ### 76. Escaneo de puertos con Metasploit
 
@@ -1280,7 +1309,7 @@ Output: [+] 192.168.1.50:22 - Success: 'root:toor'
 ```
 
 
-## SECCIÓN 17: AUTOMATIZACIÓN CON SCRIPTS
+## SECCIÓN 17: AUTOMATIZACIÓN CON SCRIPTS {#seccion-17}
 
 ### 79. Script Bash para escaneo de puertos comunes
 
@@ -1340,7 +1369,7 @@ Output: Escaneando 192.168.1.50...
 ```
 
 
-## SECCIÓN 18: MONITOREO CONTINUO
+## SECCIÓN 18: MONITOREO CONTINUO {#seccion-18}
 
 ### 81. Monitorear puertos con watch
 
@@ -1382,7 +1411,7 @@ Output: (detecta cambios en puertos abiertos)
 ```
 
 
-## SECCIÓN 19: EXPORTAR Y DOCUMENTAR
+## SECCIÓN 19: EXPORTAR Y DOCUMENTAR {#seccion-19}
 
 ### 84. Exportar resultados de Nmap a XML
 
@@ -1441,3 +1470,13 @@ TOP 10 PUERTOS MÁS UTILIZADOS EN INTERNET:
 10. Puerto 3306 (MySQL) - 1% del tráfico
 EOF
 ```
+
+---
+
+## Siguiente lectura
+
+| Guía | Enlace |
+| :--- | :--- |
+| Comandos Linux y pentesting | [Linux Cheat Sheet](linux-cheatsheet.md) |
+| Cliente FTP (puerto 21) | [FTP Cheat Sheet](ftp-cheatsheet.md) |
+| Índice general | [Inicio](index.md) |

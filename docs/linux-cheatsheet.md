@@ -1,39 +1,62 @@
 # Linux Administration Cheat Sheet
 
+| [Inicio](index.md) | [Linux](linux-cheatsheet.md) · [Puertos](ports.md) · [FTP](ftp-cheatsheet.md) |
+| :--- | :--- |
+
+> [!NOTE]
+> **29 secciones** · Referencia de comandos para administración diaria y pentesting en Kali/Ubuntu.
+
+## Referencia rápida
+
+| Comando | Descripción |
+| :--- | :--- |
+| `pwd` | Directorio actual |
+| `ls -lah` | Listar con detalles, ocultos y tamaños legibles |
+| `cd ~` / `cd -` | Home / directorio anterior |
+| `chmod 755 archivo` | Permisos rwxr-xr-x |
+| `chown usuario:grupo archivo` | Cambiar propietario |
+| `ps aux` | Procesos en ejecución |
+| `systemctl status servicio` | Estado de servicio systemd |
+| `grep -r "texto" /ruta` | Búsqueda recursiva |
+| `find / -name "*.conf" 2>/dev/null` | Buscar archivos por nombre |
+| `ssh usuario@host` | Conexión SSH |
+| `tar -czvf backup.tar.gz dir/` | Archivar y comprimir |
+| `tail -f /var/log/syslog` | Seguir log en vivo |
+
 ## Table of Contents
-1. [NAVEGACIÓN Y EXPLORACIÓN BÁSICA](#sección-1-navegación-y-exploración-básica)
-2. [CREACIÓN Y GESTIÓN DE DIRECTORIOS](#sección-2-creación-y-gestión-de-directorios)
-3. [COPIAR Y MOVER ARCHIVOS](#sección-3-copiar-y-mover-archivos)
-4. [ELIMINACIÓN DE ARCHIVOS](#sección-4-eliminación-de-archivos)
-5. [CREAR Y MODIFICAR ARCHIVOS](#sección-5-crear-y-modificar-archivos)
-6. [VISUALIZACIÓN DE CONTENIDO](#sección-6-visualización-de-contenido)
-7. [EDITORES DE TEXTO](#sección-7-editores-de-texto)
-8. [PERMISOS DE ARCHIVOS](#sección-8-permisos-de-archivos)
-9. [IDENTIDAD DE USUARIO](#sección-9-identidad-de-usuario)
-10. [GESTIÓN DE PROCESOS](#sección-10-gestión-de-procesos)
-11. [GESTIÓN DE SERVICIOS (SYSTEMD)](#sección-11-gestión-de-servicios-systemd)
-12. [REDIRECCIONES Y PIPES](#sección-12-redirecciones-y-pipes)
-13. [BÚSQUEDA DE ARCHIVOS](#sección-13-búsqueda-de-archivos)
-14. [PROCESAMIENTO DE TEXTO CON AWK](#sección-14-procesamiento-de-texto-con-awk)
-15. [PROCESAMIENTO CON SED](#sección-15-procesamiento-con-sed)
-16. [OTROS COMANDOS DE TEXTO](#sección-16-otros-comandos-de-texto)
-17. [CONECTIVIDAD Y RED](#sección-17-conectividad-y-red)
-18. [CONEXIONES SSH Y TRANSFERENCIAS](#sección-18-conexiones-ssh-y-transferencias)
-19. [COMPRESIÓN Y ARCHIVADO](#sección-19-compresión-y-archivado)
-20. [GESTIÓN DE PAQUETES](#sección-20-gestión-de-paquetes)
-21. [DISCOS Y SISTEMAS DE ARCHIVOS](#sección-21-discos-y-sistemas-de-archivos)
-22. [GESTIÓN DE USUARIOS](#sección-22-gestión-de-usuarios)
-23. [TRABAJOS EN SEGUNDO PLANO](#sección-23-trabajos-en-segundo-plano)
-24. [LOGS Y MONITOREO DEL SISTEMA](#sección-24-logs-y-monitoreo-del-sistema)
-25. [SEGURIDAD SSH Y FIREWALL](#sección-25-seguridad-ssh-y-firewall)
-26. [HERRAMIENTAS DE PENTESTING](#sección-26-herramientas-de-pentesting)
-27. [SCRIPTING Y AUTOMATIZACIÓN](#sección-27-scripting-y-automatización)
-28. [ALIAS Y VARIABLES DE ENTORNO](#sección-28-alias-y-variables-de-entorno)
-29. [HISTORIAL DE COMANDOS](#sección-29-historial-de-comandos)
+1. [NAVEGACIÓN Y EXPLORACIÓN BÁSICA](#seccion-1)
+2. [CREACIÓN Y GESTIÓN DE DIRECTORIOS](#seccion-2)
+3. [COPIAR Y MOVER ARCHIVOS](#seccion-3)
+4. [ELIMINACIÓN DE ARCHIVOS](#seccion-4)
+5. [CREAR Y MODIFICAR ARCHIVOS](#seccion-5)
+6. [VISUALIZACIÓN DE CONTENIDO](#seccion-6)
+7. [EDITORES DE TEXTO](#seccion-7)
+8. [PERMISOS DE ARCHIVOS](#seccion-8)
+9. [IDENTIDAD DE USUARIO](#seccion-9)
+10. [GESTIÓN DE PROCESOS](#seccion-10)
+11. [GESTIÓN DE SERVICIOS (SYSTEMD)](#seccion-11)
+12. [REDIRECCIONES Y PIPES](#seccion-12)
+13. [BÚSQUEDA DE ARCHIVOS](#seccion-13)
+14. [PROCESAMIENTO DE TEXTO CON AWK](#seccion-14)
+15. [PROCESAMIENTO CON SED](#seccion-15)
+16. [OTROS COMANDOS DE TEXTO](#seccion-16)
+17. [CONECTIVIDAD Y RED](#seccion-17)
+18. [CONEXIONES SSH Y TRANSFERENCIAS](#seccion-18)
+19. [COMPRESIÓN Y ARCHIVADO](#seccion-19)
+20. [GESTIÓN DE PAQUETES](#seccion-20)
+21. [DISCOS Y SISTEMAS DE ARCHIVOS](#seccion-21)
+22. [GESTIÓN DE USUARIOS](#seccion-22)
+23. [TRABAJOS EN SEGUNDO PLANO](#seccion-23)
+24. [LOGS Y MONITOREO DEL SISTEMA](#seccion-24)
+25. [SEGURIDAD SSH Y FIREWALL](#seccion-25)
+26. [HERRAMIENTAS DE PENTESTING](#seccion-26)
+27. [SCRIPTING Y AUTOMATIZACIÓN](#seccion-27)
+28. [ALIAS Y VARIABLES DE ENTORNO](#seccion-28)
+29. [HISTORIAL DE COMANDOS](#seccion-29)
 
 ---
 
-## SECCIÓN 1: NAVEGACIÓN Y EXPLORACIÓN BÁSICA
+## SECCIÓN 1: NAVEGACIÓN Y EXPLORACIÓN BÁSICA {#seccion-1}
 
 ### 1. Ver directorio actual
 
@@ -147,7 +170,7 @@ Output: /home/kali/Documents
 ```
 
 
-## SECCIÓN 2: CREACIÓN Y GESTIÓN DE DIRECTORIOS
+## SECCIÓN 2: CREACIÓN Y GESTIÓN DE DIRECTORIOS {#seccion-2}
 
 ### 13. Crear directorio simple
 
@@ -190,7 +213,7 @@ Output: drwx------ 2 kali kali 4096 Oct 13 16:52 privado
 ```
 
 
-## SECCIÓN 3: COPIAR Y MOVER ARCHIVOS
+## SECCIÓN 3: COPIAR Y MOVER ARCHIVOS {#seccion-3}
 
 ### 17. Crear archivo de prueba
 
@@ -273,7 +296,7 @@ Output: file1.log  file2.log  file3.log
 ```
 
 
-## SECCIÓN 4: ELIMINACIÓN DE ARCHIVOS
+## SECCIÓN 4: ELIMINACIÓN DE ARCHIVOS {#seccion-4}
 
 ### 25. Crear archivos de prueba para eliminar
 
@@ -335,7 +358,7 @@ Output: archivo_importante.txt
 ```
 
 
-## SECCIÓN 5: CREAR Y MODIFICAR ARCHIVOS
+## SECCIÓN 5: CREAR Y MODIFICAR ARCHIVOS {#seccion-5}
 
 ### 31. Crear archivo vacío o actualizar timestamp
 
@@ -373,7 +396,7 @@ Output: -rw-r--r-- 1 kali kali 0 Oct  1 12:00 archivo_viejo.txt
 ```
 
 
-## SECCIÓN 6: VISUALIZACIÓN DE CONTENIDO
+## SECCIÓN 6: VISUALIZACIÓN DE CONTENIDO {#seccion-6}
 
 ### 35. Crear archivo con contenido para pruebas
 
@@ -483,7 +506,7 @@ tail -F /var/log/syslog
 ```
 
 
-## SECCIÓN 7: EDITORES DE TEXTO
+## SECCIÓN 7: EDITORES DE TEXTO {#seccion-7}
 
 ### 46. Editar archivo con nano (editor simple)
 
@@ -512,7 +535,7 @@ Output: #!/bin/bash
 ```
 
 
-## SECCIÓN 8: PERMISOS DE ARCHIVOS
+## SECCIÓN 8: PERMISOS DE ARCHIVOS {#seccion-8}
 
 ### 48. Verificar permisos actuales
 
@@ -677,7 +700,7 @@ Output: drwxr-sr-x 2 kali kali 4096 Oct 13 17:17 grupo_compartido
 ```
 
 
-## SECCIÓN 9: IDENTIDAD DE USUARIO
+## SECCIÓN 9: IDENTIDAD DE USUARIO {#seccion-9}
 
 ### 64. Ver información completa del usuario actual
 
@@ -711,7 +734,7 @@ Output: uid=0(root) gid=0(root) groups=0(root)
 ```
 
 
-## SECCIÓN 10: GESTIÓN DE PROCESOS
+## SECCIÓN 10: GESTIÓN DE PROCESOS {#seccion-10}
 
 ### 68. Ver todos los procesos (formato BSD)
 
@@ -826,7 +849,7 @@ Output: [1]   Terminated              sleep 30
 ```
 
 
-## SECCIÓN 11: GESTIÓN DE SERVICIOS (SYSTEMD)
+## SECCIÓN 11: GESTIÓN DE SERVICIOS (SYSTEMD) {#seccion-11}
 
 ### 79. Ver estado de servicio
 
@@ -912,7 +935,7 @@ Output: * Restarting Apache httpd web server apache2
 ```
 
 
-## SECCIÓN 12: REDIRECCIONES Y PIPES
+## SECCIÓN 12: REDIRECCIONES Y PIPES {#seccion-12}
 
 ### 88. Redirigir salida a archivo (sobrescribe)
 
@@ -994,7 +1017,7 @@ Output: (cuenta de errores únicos por timestamp)
 ```
 
 
-## SECCIÓN 13: BÚSQUEDA DE ARCHIVOS
+## SECCIÓN 13: BÚSQUEDA DE ARCHIVOS {#seccion-13}
 
 ### 97. Buscar archivo por nombre
 
@@ -1100,7 +1123,7 @@ Output: /home/kali/config.txt
 ```
 
 
-## SECCIÓN 14: PROCESAMIENTO DE TEXTO CON AWK
+## SECCIÓN 14: PROCESAMIENTO DE TEXTO CON AWK {#seccion-14}
 
 ### 109. Imprimir primera columna
 
@@ -1141,7 +1164,7 @@ Output: Total: 100
 ```
 
 
-## SECCIÓN 15: PROCESAMIENTO CON SED
+## SECCIÓN 15: PROCESAMIENTO CON SED {#seccion-15}
 
 ### 113. Reemplazar texto (primera ocurrencia por línea)
 
@@ -1189,7 +1212,7 @@ Output: (contenido original)
 ```
 
 
-## SECCIÓN 16: OTROS COMANDOS DE TEXTO
+## SECCIÓN 16: OTROS COMANDOS DE TEXTO {#seccion-16}
 
 ### 118. Extraer campos específicos
 
@@ -1267,7 +1290,7 @@ Output: (búsqueda rápida de "function")
 ```
 
 
-## SECCIÓN 17: CONECTIVIDAD Y RED
+## SECCIÓN 17: CONECTIVIDAD Y RED {#seccion-17}
 
 ### 126. Hacer ping a servidor (4 paquetes)
 
@@ -1487,7 +1510,7 @@ Output: Running: Linux 5.X
 ```
 
 
-## SECCIÓN 18: CONEXIONES SSH Y TRANSFERENCIAS
+## SECCIÓN 18: CONEXIONES SSH Y TRANSFERENCIAS {#seccion-18}
 
 ### 149. Conectar por SSH
 
@@ -1577,7 +1600,7 @@ Output: Connected to 192.168.1.50
 ```
 
 
-## SECCIÓN 19: COMPRESIÓN Y ARCHIVADO
+## SECCIÓN 19: COMPRESIÓN Y ARCHIVADO {#seccion-19}
 
 ### 158. Crear directorio con archivos de prueba
 
@@ -1735,7 +1758,7 @@ Output: drwxr-xr-x kali/kali         0 2025-10-13 18:00 archivos_prueba/
 ```
 
 
-## SECCIÓN 20: GESTIÓN DE PAQUETES
+## SECCIÓN 20: GESTIÓN DE PAQUETES {#seccion-20}
 
 ### 174. Actualizar lista de paquetes (Debian/Ubuntu/Kali)
 
@@ -1869,7 +1892,7 @@ Output: Removing paquete (1.0) ...
 ```
 
 
-## SECCIÓN 21: DISCOS Y SISTEMAS DE ARCHIVOS
+## SECCIÓN 21: DISCOS Y SISTEMAS DE ARCHIVOS {#seccion-21}
 
 ### 188. Listar dispositivos de bloque
 
@@ -2034,7 +2057,7 @@ Output: Resizing the filesystem to 3932160 blocks
 ```
 
 
-## SECCIÓN 22: GESTIÓN DE USUARIOS
+## SECCIÓN 22: GESTIÓN DE USUARIOS {#seccion-22}
 
 ### 205. Crear nuevo usuario
 
@@ -2138,7 +2161,7 @@ Output: /bin/zsh
 ```
 
 
-## SECCIÓN 23: TRABAJOS EN SEGUNDO PLANO
+## SECCIÓN 23: TRABAJOS EN SEGUNDO PLANO {#seccion-23}
 
 ### 217. Ejecutar comando en background
 
@@ -2218,7 +2241,7 @@ Output: [1]   Running                 sleep 100 &
 ```
 
 
-## SECCIÓN 24: LOGS Y MONITOREO DEL SISTEMA
+## SECCIÓN 24: LOGS Y MONITOREO DEL SISTEMA {#seccion-24}
 
 ### 225. Ver logs del sistema con journalctl
 
@@ -2352,7 +2375,7 @@ Output: USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 ```
 
 
-## SECCIÓN 25: SEGURIDAD SSH Y FIREWALL
+## SECCIÓN 25: SEGURIDAD SSH Y FIREWALL {#seccion-25}
 
 ### 240. Generar par de claves SSH (Ed25519 - recomendado)
 
@@ -2508,7 +2531,7 @@ Output: (muestra todas las reglas de nftables)
 ```
 
 
-## SECCIÓN 26: HERRAMIENTAS DE PENTESTING
+## SECCIÓN 26: HERRAMIENTAS DE PENTESTING {#seccion-26}
 
 ### 256. Escaneo básico con nmap
 
@@ -2652,7 +2675,7 @@ Output: [ Rootkit Hunter version 1.4.6 ]
 ```
 
 
-## SECCIÓN 27: SCRIPTING Y AUTOMATIZACIÓN
+## SECCIÓN 27: SCRIPTING Y AUTOMATIZACIÓN {#seccion-27}
 
 ### 270. Crear script básico de backup
 
@@ -2762,7 +2785,7 @@ Output: Procesando: /var/log/apt/history.log
 ```
 
 
-## SECCIÓN 28: ALIAS Y VARIABLES DE ENTORNO
+## SECCIÓN 28: ALIAS Y VARIABLES DE ENTORNO {#seccion-28}
 
 ### 276. Crear alias temporal
 
@@ -2839,7 +2862,7 @@ source ~/.bashrc
 ```
 
 
-## SECCIÓN 29: HISTORIAL DE COMANDOS
+## SECCIÓN 29: HISTORIAL DE COMANDOS {#seccion-29}
 
 ### 284. Ver historial completo
 
@@ -2856,3 +2879,13 @@ Output: 1234  ls -la
 ```bash
 !
 ```
+
+---
+
+## Siguiente lectura
+
+| Guía | Enlace |
+| :--- | :--- |
+| Puertos de red y Nmap | [Network Ports Reference](ports.md) |
+| Cliente FTP y transferencias | [FTP Cheat Sheet](ftp-cheatsheet.md) |
+| Índice general | [Inicio](index.md) |

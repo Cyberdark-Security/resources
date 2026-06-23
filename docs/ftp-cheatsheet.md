@@ -1,32 +1,44 @@
 # FTP Cheat Sheet
 
+| [Inicio](index.md) | [Linux](linux-cheatsheet.md) · [Puertos](ports.md) · [FTP](ftp-cheatsheet.md) |
+| :--- | :--- |
+
+> [!WARNING]
+> **ADVERTENCIA DE SEGURIDAD**: FTP transmite credenciales y datos en texto claro. En producción usa **SFTP** (SSH) o **SCP**.
+
+## Referencia rápida
+
+| Comando FTP | Acción |
+| :--- | :--- |
+| `ftp host` | Conectar al servidor |
+| `ls` / `dir` | Listar archivos remotos |
+| `cd dir` / `lcd dir` | Cambiar directorio remoto / local |
+| `get archivo` | Descargar |
+| `put archivo` | Subir |
+| `binary` | Modo binario (archivos no texto) |
+| `mget *.txt` | Descarga múltiple |
+| `bye` / `quit` | Cerrar sesión |
+
 ## Table of Contents
-1. [CONEXIÓN Y AUTENTICACIÓN](#sección-1-conexión-y-autenticación)
-2. [NAVEGACIÓN Y EXPLORACIÓN](#sección-2-navegación-y-exploración)
-3. [CONFIGURACIÓN DE TRANSFERENCIA](#sección-3-configuración-de-transferencia)
-4. [DESCARGA DE ARCHIVOS](#sección-4-descarga-de-archivos)
-5. [VERIFICACIÓN LOCAL](#sección-5-verificación-local)
-6. [SUBIDA DE ARCHIVOS](#sección-6-subida-de-archivos)
-7. [GESTIÓN DE ARCHIVOS REMOTOS](#sección-7-gestión-de-archivos-remotos)
-8. [OPERACIONES AVANZADAS](#sección-8-operaciones-avanzadas)
-9. [LIMPIEZA Y MANTENIMIENTO](#sección-9-limpieza-y-mantenimiento)
-10. [TRANSFERENCIAS INTERRUMPIDAS](#sección-10-transferencias-interrumpidas)
-11. [ACCESO ANÓNIMO (PENTESTING)](#sección-11-acceso-anónimo-pentesting)
-12. [INFORMACIÓN Y AYUDA](#sección-12-información-y-ayuda)
-13. [COMANDOS LOCALES ÚTILES](#sección-13-comandos-locales-útiles)
-14. [OPERACIONES EN LOTE](#sección-14-operaciones-en-lote)
-15. [FINALIZACIÓN Y CIERRE](#sección-15-finalización-y-cierre)
+1. [CONEXIÓN Y AUTENTICACIÓN](#seccion-1)
+2. [NAVEGACIÓN Y EXPLORACIÓN](#seccion-2)
+3. [CONFIGURACIÓN DE TRANSFERENCIA](#seccion-3)
+4. [DESCARGA DE ARCHIVOS](#seccion-4)
+5. [VERIFICACIÓN LOCAL](#seccion-5)
+6. [SUBIDA DE ARCHIVOS](#seccion-6)
+7. [GESTIÓN DE ARCHIVOS REMOTOS](#seccion-7)
+8. [OPERACIONES AVANZADAS](#seccion-8)
+9. [LIMPIEZA Y MANTENIMIENTO](#seccion-9)
+10. [TRANSFERENCIAS INTERRUMPIDAS](#seccion-10)
+11. [ACCESO ANÓNIMO (PENTESTING)](#seccion-11)
+12. [INFORMACIÓN Y AYUDA](#seccion-12)
+13. [COMANDOS LOCALES ÚTILES](#seccion-13)
+14. [OPERACIONES EN LOTE](#seccion-14)
+15. [FINALIZACIÓN Y CIERRE](#seccion-15)
 
 ---
 
-> [!WARNING]
-
-```bash
-> **ADVERTENCIA DE SEGURIDAD**: FTP es un protocolo no cifrado. Todos los datos, incluyendo nombres de usuario y contraseñas, se transmiten en texto claro. Para entornos de producción, utilice alternativas seguras como **SFTP** (SSH File Transfer Protocol) o **SCP** (Secure Copy).
-```
-
-
-## SECCIÓN 1: CONEXIÓN Y AUTENTICACIÓN
+## SECCIÓN 1: CONEXIÓN Y AUTENTICACIÓN {#seccion-1}
 
 ### 1. Conectar a un servidor FTP
 
@@ -56,7 +68,7 @@ Output: 215 UNIX Type: L8
 ```
 
 
-## SECCIÓN 2: NAVEGACIÓN Y EXPLORACIÓN
+## SECCIÓN 2: NAVEGACIÓN Y EXPLORACIÓN {#seccion-2}
 
 ### 4. Ver directorio actual remoto
 
@@ -129,7 +141,7 @@ Output: -rw-r--r--   1 admin  admin     2048 Oct 13 10:00 informe.pdf
 ```
 
 
-## SECCIÓN 3: CONFIGURACIÓN DE TRANSFERENCIA
+## SECCIÓN 3: CONFIGURACIÓN DE TRANSFERENCIA {#seccion-3}
 
 ### 12. Activar modo binario (para archivos no texto)
 
@@ -163,7 +175,7 @@ Output: Passive mode on
 ```
 
 
-## SECCIÓN 4: DESCARGA DE ARCHIVOS
+## SECCIÓN 4: DESCARGA DE ARCHIVOS {#seccion-4}
 
 ### 16. Ver tamaño de archivo antes de descargar
 
@@ -278,7 +290,7 @@ Output: local: foto1.jpg remote: foto1.jpg
 ```
 
 
-## SECCIÓN 5: VERIFICACIÓN LOCAL
+## SECCIÓN 5: VERIFICACIÓN LOCAL {#seccion-5}
 
 ### 28. Verificar archivos descargados localmente
 
@@ -312,7 +324,7 @@ kali@kali:~/Downloads$ exit
 ```
 
 
-## SECCIÓN 6: SUBIDA DE ARCHIVOS
+## SECCIÓN 6: SUBIDA DE ARCHIVOS {#seccion-6}
 
 ### 31. Cambiar al directorio local con archivos a subir
 
@@ -451,7 +463,7 @@ Output: local: captura1.png remote: captura1.png
 ```
 
 
-## SECCIÓN 7: GESTIÓN DE ARCHIVOS REMOTOS
+## SECCIÓN 7: GESTIÓN DE ARCHIVOS REMOTOS {#seccion-7}
 
 ### 46. Listar archivos subidos
 
@@ -497,7 +509,7 @@ Output: screenshot_principal.png
 ```
 
 
-## SECCIÓN 8: OPERACIONES AVANZADAS
+## SECCIÓN 8: OPERACIONES AVANZADAS {#seccion-8}
 
 ### 51. Navegar a directorio temporal
 
@@ -567,7 +579,7 @@ Output: Debugging off (debug=0)
 ```
 
 
-## SECCIÓN 9: LIMPIEZA Y MANTENIMIENTO
+## SECCIÓN 9: LIMPIEZA Y MANTENIMIENTO {#seccion-9}
 
 ### 59. Navegar a directorio de backups
 
@@ -664,7 +676,7 @@ Output: 250 Remove directory operation successful
 ```
 
 
-## SECCIÓN 10: TRANSFERENCIAS INTERRUMPIDAS
+## SECCIÓN 10: TRANSFERENCIAS INTERRUMPIDAS {#seccion-10}
 
 ### 70. Cambiar al directorio local
 
@@ -737,7 +749,7 @@ Output: local: ubuntu.iso remote: ubuntu.iso
 ```
 
 
-## SECCIÓN 11: ACCESO ANÓNIMO (PENTESTING)
+## SECCIÓN 11: ACCESO ANÓNIMO (PENTESTING) {#seccion-11}
 
 ### 78. Cerrar conexión actual
 
@@ -810,7 +822,7 @@ Output: 550 Permission denied (o éxito si el servidor lo permite)
 ```
 
 
-## SECCIÓN 12: INFORMACIÓN Y AYUDA
+## SECCIÓN 12: INFORMACIÓN Y AYUDA {#seccion-12}
 
 ### 86. Ver todos los comandos disponibles
 
@@ -857,7 +869,7 @@ Output: Connected to ftp.example.com
 ```
 
 
-## SECCIÓN 13: COMANDOS LOCALES ÚTILES
+## SECCIÓN 13: COMANDOS LOCALES ÚTILES {#seccion-13}
 
 ### 90. Ver espacio en disco local
 
@@ -907,7 +919,7 @@ Output: Local directory now /home/kali/FTP_Downloads/2025-10-13
 ```
 
 
-## SECCIÓN 14: OPERACIONES EN LOTE
+## SECCIÓN 14: OPERACIONES EN LOTE {#seccion-14}
 
 ### 96. Navegar a directorio con muchos archivos
 
@@ -957,7 +969,7 @@ Output: -rw-r--r-- 1 kali kali 2.1K Oct 13 17:00 system.log.gz
 ```
 
 
-## SECCIÓN 15: FINALIZACIÓN Y CIERRE
+## SECCIÓN 15: FINALIZACIÓN Y CIERRE {#seccion-15}
 
 ### 101. Volver al directorio raíz remoto
 
@@ -1074,3 +1086,13 @@ kali@kali:~$ history | grep ftp
 Output: 1234  ftp 192.168.1.100
 #         1235  ftp ftp.example.com
 ```
+
+---
+
+## Siguiente lectura
+
+| Guía | Enlace |
+| :--- | :--- |
+| Comandos Linux y SSH/SFTP | [Linux Cheat Sheet](linux-cheatsheet.md) |
+| Puertos (21 FTP, 22 SSH) | [Network Ports Reference](ports.md) |
+| Índice general | [Inicio](index.md) |
