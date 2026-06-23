@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cyberdark-Security/resources/main/docs/assets/banner.png" alt="resources - Linux, Redes, Pentesting" width="100%">
+  <img src="docs/assets/banner.png" alt="resources - Linux, Redes, Pentesting" width="100%">
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
   <tr>
     <td align="center" width="33%">
       <a href="docs/linux-cheatsheet.md">
-        <img src="https://raw.githubusercontent.com/Cyberdark-Security/resources/main/docs/assets/card-linux.png" alt="Linux Cheat Sheet" width="100%">
+        <img src="docs/assets/card-linux.png" alt="Linux Cheat Sheet" width="100%">
       </a>
       <br>
       <strong>Linux Administration</strong><br>
