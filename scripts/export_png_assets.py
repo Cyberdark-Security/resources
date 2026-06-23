@@ -16,14 +16,18 @@ SIZES = {
 def main() -> None:
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page()
+        page = browser.new_page(device_scale_factor=2)
         for name, (width, height) in SIZES.items():
             svg = ASSETS / name
             png = ASSETS / name.replace(".svg", ".png")
             page.set_viewport_size({"width": width, "height": height})
-            page.goto(svg.as_uri())
+            page.goto(svg.as_uri(), wait_until="networkidle")
             page.screenshot(path=str(png), type="png", omit_background=False)
-            print(f"Created {png.name} ({width}x{height})")
+            # Reject accidental error-page captures (mostly white/pink)
+            data = png.read_bytes()
+            if b"PNG" not in data[:8]:
+                raise RuntimeError(f"Invalid PNG for {name}")
+            print(f"Created {png.name} ({width}x{height}, {len(data)} bytes)")
         browser.close()
 
 
