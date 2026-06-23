@@ -1,6 +1,28 @@
 # Recursos Técnicos
 
+<picture>
+  <img src="assets/banner.svg" alt="resources — Linux, Redes, Pentesting" width="100%">
+</picture>
+
 Bienvenido al hub de documentación. Selecciona una guía o usa la búsqueda (icono superior en la vista MkDocs).
+
+---
+
+## Guías
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="linux-cheatsheet.md"><img src="assets/card-linux.svg" alt="Linux" width="100%"></a>
+    </td>
+    <td align="center" width="33%">
+      <a href="ports.md"><img src="assets/card-ports.svg" alt="Puertos" width="100%"></a>
+    </td>
+    <td align="center" width="33%">
+      <a href="ftp-cheatsheet.md"><img src="assets/card-ftp.svg" alt="FTP" width="100%"></a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -25,38 +47,6 @@ Bienvenido al hub de documentación. Selecciona una guía o usa la búsqueda (ic
 
 ---
 
-## Guías completas
-
-<div class="grid cards" markdown>
-
--   :material-console: **Linux Administration**
-
-    ---
-
-    29 secciones: navegación, permisos, red, compresión, pentesting y scripting.
-
-    [:octicons-arrow-right-24: Abrir guía](linux-cheatsheet.md)
-
--   :material-lan: **Network Ports**
-
-    ---
-
-    Catálogo de puertos, Nmap, netstat, firewall y automatización.
-
-    [:octicons-arrow-right-24: Abrir guía](ports.md)
-
--   :material-folder-arrow-up: **FTP Cheat Sheet**
-
-    ---
-
-    Cliente FTP, transferencias, pentesting y migración a SFTP.
-
-    [:octicons-arrow-right-24: Abrir guía](ftp-cheatsheet.md)
-
-</div>
-
----
-
 ## Mapa del repositorio
 
 ```text
@@ -64,6 +54,7 @@ resources/
 ├── README.md                 ← Punto de entrada (GitHub)
 ├── plan-maestro.md           ← Roadmap Whoami-Labs
 ├── docs/
+│   ├── assets/               ← Banners y cards visuales
 │   ├── index.md              ← Esta página (MkDocs home)
 │   ├── linux-cheatsheet.md
 │   ├── ports.md
