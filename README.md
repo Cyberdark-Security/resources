@@ -1,5 +1,5 @@
 <picture>
-  <img src="docs/assets/banner.svg" alt="resources — Linux, Redes, Pentesting" width="100%">
+  <img src="docs/assets/banner.png" alt="resources — Linux, Redes, Pentesting" width="100%">
 </picture>
 
 <p align="center">
@@ -29,7 +29,7 @@
   <tr>
     <td align="center" width="33%">
       <a href="docs/linux-cheatsheet.md">
-        <img src="docs/assets/card-linux.svg" alt="Linux Cheat Sheet" width="100%">
+        <img src="docs/assets/card-linux.png" alt="Linux Cheat Sheet" width="100%">
       </a>
       <br>
       <strong>Linux Administration</strong><br>
@@ -37,7 +37,7 @@
     </td>
     <td align="center" width="33%">
       <a href="docs/ports.md">
-        <img src="docs/assets/card-ports.svg" alt="Network Ports" width="100%">
+        <img src="docs/assets/card-ports.png" alt="Network Ports" width="100%">
       </a>
       <br>
       <strong>Network Ports</strong><br>
@@ -45,7 +45,7 @@
     </td>
     <td align="center" width="33%">
       <a href="docs/ftp-cheatsheet.md">
-        <img src="docs/assets/card-ftp.svg" alt="FTP Cheat Sheet" width="100%">
+        <img src="docs/assets/card-ftp.png" alt="FTP Cheat Sheet" width="100%">
       </a>
       <br>
       <strong>FTP Cheat Sheet</strong><br>

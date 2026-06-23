@@ -1,7 +1,7 @@
 # Recursos Técnicos
 
 <picture>
-  <img src="assets/banner.svg" alt="resources — Linux, Redes, Pentesting" width="100%">
+  <img src="assets/banner.png" alt="resources — Linux, Redes, Pentesting" width="100%">
 </picture>
 
 Bienvenido al hub de documentación. Selecciona una guía o usa la búsqueda (icono superior en la vista MkDocs).
@@ -13,13 +13,13 @@ Bienvenido al hub de documentación. Selecciona una guía o usa la búsqueda (ic
 <table>
   <tr>
     <td align="center" width="33%">
-      <a href="linux-cheatsheet.md"><img src="assets/card-linux.svg" alt="Linux" width="100%"></a>
+      <a href="linux-cheatsheet.md"><img src="assets/card-linux.png" alt="Linux" width="100%"></a>
     </td>
     <td align="center" width="33%">
-      <a href="ports.md"><img src="assets/card-ports.svg" alt="Puertos" width="100%"></a>
+      <a href="ports.md"><img src="assets/card-ports.png" alt="Puertos" width="100%"></a>
     </td>
     <td align="center" width="33%">
-      <a href="ftp-cheatsheet.md"><img src="assets/card-ftp.svg" alt="FTP" width="100%"></a>
+      <a href="ftp-cheatsheet.md"><img src="assets/card-ftp.png" alt="FTP" width="100%"></a>
     </td>
   </tr>
 </table>
